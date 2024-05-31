@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\MediaGallery;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -28,7 +29,7 @@ class CarController extends Controller
             'status' => 'min:0|max:2|integer',
         ]);
 
-        Car::createCar(
+        $car =Car::createCar(
             $request->model_id,
             $request->damage_id,
             $request->district_id,
@@ -43,6 +44,23 @@ class CarController extends Controller
             $request->fiyat,
             $request->description
         );
+
+        if($request->hasFile('photos')) {
+            foreach($request->file('photos') as $photo) {
+                $imageName = time().'_'.uniqid().'.'.$photo->extension();
+                $photo->move(public_path('panel/img'), $imageName);
+
+
+                MediaGallery::create([
+                    'car_id' => $car->id,
+                    'media' => $imageName,
+                ]);
+
+            }
+        }
+
+        return redirect()->route('cars.create')->with('success','Araba Oluşturuldu');
+
     }
 
 }

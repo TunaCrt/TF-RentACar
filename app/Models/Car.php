@@ -33,6 +33,8 @@ class Car extends Model
         $car->description = $description;
         $car-save();
 
+        return $car;
+
     }
 
 
