@@ -111,21 +111,19 @@
 </div>
 <!-- Modal Search End -->
 
-
 <!-- Hero Start -->
 <div class="container-fluid py-5 mb-5">
     <div class="container py-5">
 
     </div>
 </div>
+
+
 <!-- Hero End -->
 <div class="container-fluid featurs py-5">
     <div class="container py-5">
-    </div>
-</div>
-<div class="container-fluid featurs py-5">
-    <div class="container py-5">
-    </div>
+        @yield('content')
+       </div>
 </div>
 
 
