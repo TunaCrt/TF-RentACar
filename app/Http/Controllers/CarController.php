@@ -31,6 +31,7 @@ class CarController extends Controller
         Car::createCar(
             $request->model_id,
             $request->damage_id,
+            $request->district_id,
             $request->year,
             $request->color,
             $request->km,

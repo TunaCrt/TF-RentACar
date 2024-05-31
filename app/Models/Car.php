@@ -14,12 +14,13 @@ class Car extends Model
     protected $table = 'cars';
 
 
-    public static function createCar($model_id,$damage_id,$year,$color,$km,$garanti_status,$vites_turu,$yakit_turu,$announcement_date,$status,$fiyat,$description)
+    public static function createCar($model_id,$damage_id,$district_id,$year,$color,$km,$garanti_status,$vites_turu,$yakit_turu,$announcement_date,$status,$fiyat,$description)
     {
         $car = new Car();
         $car->user_id = Auth::id();
         $car->model_id = $model_id;
         $car->damage_id = $damage_id;
+        $car->district_id = $district_id;
         $car->year = $year;
         $car->color = $color;
         $car->km = $km;
