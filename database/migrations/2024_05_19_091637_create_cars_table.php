@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('model_id');
             $table->unsignedBigInteger('damage_id');
+            $table->unsignedBigInteger('district_id');
             $table->unsignedInteger('year');
             $table->string('color');
             $table->unsignedInteger('km');
@@ -40,6 +41,9 @@ return new class extends Migration
 
             $table->foreign('damage_id')
                 ->on('car_damages')->references('id')->onDelete('cascade');
+
+            $table->foreign('district_id')
+                ->on('districts')->references('id')->onDelete('cascade');
         });
     }
 
