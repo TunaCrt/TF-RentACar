@@ -20,14 +20,12 @@ return new class extends Migration
             $table->string('color');
             $table->unsignedInteger('km');
             $table->boolean('garanti_status')->default(0);
-            $table->tinyInteger('vites_turu')->comment('0-mauel 1-otomatik 2-yarı otomatik');
+            $table->tinyInteger('vites_turu')->comment('0-manuel 1-otomatik 2-yarı otomatik');
             $table->tinyInteger('yakit_turu')->comment('0-benzin 1-dizel 2-lpg');
-            $table->dateTime('announcment_date');
+            $table->dateTime('announcement_date');
             $table->tinyInteger('status')->comment('0-pasif 1-aktif 2-satıldı');
             $table->integer('fiyat');
             $table->text('description')->nullable();
-
-
 
 
             $table->softDeletes();
