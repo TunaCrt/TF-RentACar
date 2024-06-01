@@ -18,7 +18,7 @@
 
     <div class="container py-5">
         <h1 class="mb-4">Araba Bilgileri</h1>
-        <form action="{{route('cars.store')}}" method="post">
+        <form action="{{route('cars.store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="row g-5">
