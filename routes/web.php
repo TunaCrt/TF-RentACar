@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Models\CarModel;
 use App\Models\District;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,12 @@ Route::get('/districts/{city_id}',function ($city_id){
 
     $districts = District::where('city_id', $city_id)->get();
     return response()->json($districts);
+});
+
+Route::get('/models/{brand_id}',function ($brand_id){
+
+    $models = CarModel::where('brand_id', $brand_id)->get();
+    return response()->json($models);
 });
 
 

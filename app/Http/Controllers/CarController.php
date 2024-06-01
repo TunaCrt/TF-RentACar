@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarBrand;
 use App\Models\CarDamage;
 use App\Models\City;
 use App\Models\MediaGallery;
@@ -22,8 +23,9 @@ class CarController extends Controller
     public function create()
     {
         $cities = City::get();
-
-        return view('panel.cars.create',compact('cities'));
+        $cars = Car::latest()->take(8)->get();
+        $brands = CarBrand::get();
+        return view('panel.cars.create',compact('cities','cars','brands'));
     }
 
     public function store(Request $request)
@@ -50,6 +52,7 @@ class CarController extends Controller
         }else{
             $status = 1;
         }
+
 
         $damage = CarDamage::create([
             'hasar_tarihi' => $request->hasar_tarihi,

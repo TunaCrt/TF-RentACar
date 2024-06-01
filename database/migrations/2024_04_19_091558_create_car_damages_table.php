@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('car_damages', function (Blueprint $table) {
             $table->id();
-            $table->date('hasar_tarihi');
-            $table->text('damage_description');
+            $table->date('hasar_tarihi')->nullable();
+            $table->text('damage_description')->nullable();
             $table->timestamps();
         });
     }

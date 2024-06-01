@@ -35,13 +35,34 @@ class Car extends Model
         $car->description = $description;
         $car->save();
 
-
-
         return $car;
 
     }
 
 
+    public function model()
+    {
+      return $this->belongsTo(CarModel::class,'model_id','id');
+    }
+
+    public function district()
+    {
+       return $this->belongsTo(District::class,'district_id','id');
+    }
+
+    public function getCity()
+    {
+       return $this->district->city->title;
+    }
+    public function getBrand()
+    {
+        return $this->model->brand->name;
+    }
+
+    public function media()
+    {
+        return $this->hasMany(MediaGallery::class,'car_id','id');
+    }
 
 
 }

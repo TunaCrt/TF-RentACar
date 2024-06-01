@@ -12,4 +12,10 @@ class District extends Model
     protected $table = 'districts';
 
 
+    public function city()
+    {
+       return $this->belongsTo(City::class,'city_id','id');
+    }
+
+
 }

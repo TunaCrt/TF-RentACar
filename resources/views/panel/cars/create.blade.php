@@ -53,18 +53,19 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Marka<sup>*</sup></label>
-                                <select name="brand_id" id="" class="form-control">
+                                <select name="brand_id" id="brand" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
-                                    <option value="">BMW</option>
+                                    @foreach($brands as $brand)
+                                        <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Model<sup>*</sup></label>
-                                <select name="model_id" id="" class="form-control">
+                                <select name="model_id" id="model" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
-                                    <option value="1">m5</option>
                                 </select>
                             </div>
                         </div>
@@ -159,47 +160,28 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">Products</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
+                                <th scope="col"></th>
+                                <th scope="col">Marka</th>
+                                <th scope="col">Model</th>
+                                <th scope="col">İl</th>
+                                <th scope="col">Fiyat</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row">
-                                    <div class="d-flex align-items-center mt-2">
-                                        <img src="img/vegetable-item-2.jpg" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
-                                    </div>
-                                </th>
-                                <td class="py-5">Awesome Brocoli</td>
-                                <td class="py-5">$69.00</td>
-                                <td class="py-5">2</td>
-                                <td class="py-5">$138.00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <div class="d-flex align-items-center mt-2">
-                                        <img src="img/vegetable-item-5.jpg" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
-                                    </div>
-                                </th>
-                                <td class="py-5">Potatoes</td>
-                                <td class="py-5">$69.00</td>
-                                <td class="py-5">2</td>
-                                <td class="py-5">$138.00</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    <div class="d-flex align-items-center mt-2">
-                                        <img src="img/vegetable-item-3.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
-                                    </div>
-                                </th>
-                                <td class="py-5">Big Banana</td>
-                                <td class="py-5">$69.00</td>
-                                <td class="py-5">2</td>
-                                <td class="py-5">$138.00</td>
-                            </tr>
+
+                            @foreach($cars as $car)
+                                <tr>
+                                    <th scope="row">
+                                        <div class="d-flex align-items-center mt-2">
+                                            <img src="{{ asset('panel/img/' . $car->media->first()->media) }}" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                        </div>
+                                    </th>
+                                    <td class="py-5">{{$car->getBrand()}}</td>
+                                    <td class="py-5">{{$car->model->name}}</td>
+                                    <td class="py-5">{{$car->getCity()}}</td>
+                                    <td class="py-5">{{$car->fiyat}}</td>
+                                </tr>
+                            @endforeach
 
                             </tbody>
                         </table>
@@ -231,6 +213,27 @@
                 } else {
                     $('#district').empty();
                     $('#district').append('<option value="" selected disabled>Seçiniz</option>');
+                }
+            });
+
+            $('#brand').on('change', function() {
+                var brandId = $(this).val();
+                if(brandId) {
+                    $.ajax({
+                        url: '/models/' + brandId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#model').empty();
+                            $('#model').append('<option value="" selected disabled>Seçiniz</option>');
+                            $.each(data, function(key, value) {
+                                $('#model').append('<option value="'+ value.id +'">'+ value.name +'</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#model').empty();
+                    $('#model').append('<option value="" selected disabled>Seçiniz</option>');
                 }
             });
         });
