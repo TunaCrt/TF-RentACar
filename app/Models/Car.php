@@ -13,6 +13,7 @@ class Car extends Model
 
     protected $table = 'cars';
 
+    protected $dates = ['$announcement_date'];
 
     public static function createCar($model_id,$damage_id,$district_id,$year,$color,$km,$garanti_status,$vites_turu,$yakit_turu,$announcement_date,$status,$fiyat,$description)
     {
@@ -31,7 +32,7 @@ class Car extends Model
         $car->status = $status;
         $car->fiyat = $fiyat;
         $car->description = $description;
-        $car-save();
+        $car->save();
 
         return $car;
 

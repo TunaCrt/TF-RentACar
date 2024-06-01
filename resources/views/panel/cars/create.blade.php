@@ -18,7 +18,10 @@
 
     <div class="container py-5">
         <h1 class="mb-4">Araba Bilgileri</h1>
-        <form action="#">
+        <form action="{{route('cars.store')}}" method="post">
+            @csrf
+
+            <input type="hidden" name="damage_id" value="1">
             <div class="row g-5">
                 <div class="col-md-12 col-lg-6 col-xl-7">
                     <div class="form-group">
@@ -29,18 +32,19 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">İl<sup>*</sup></label>
-                                <select name="" id="" class="form-control">
+                                <select name="city_id" id="city" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
-                                    <option value="">BMW</option>
+                                    @foreach($cities as $city)
+                                        <option value="{{$city->id}}">{{$city->title}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">İlçe<sup>*</sup></label>
-                                <select name="" id="" class="form-control">
+                                <select name="district_id" id="district" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
-                                    <option value="">m5</option>
                                 </select>
                             </div>
                         </div>
@@ -50,7 +54,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Marka<sup>*</sup></label>
-                                <select name="" id="" class="form-control">
+                                <select name="brand_id" id="" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
                                     <option value="">BMW</option>
                                 </select>
@@ -59,9 +63,9 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Model<sup>*</sup></label>
-                                <select name="" id="" class="form-control">
+                                <select name="model_id" id="" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
-                                    <option value="">m5</option>
+                                    <option value="1">m5</option>
                                 </select>
                             </div>
                         </div>
@@ -70,13 +74,13 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Yıl<sup>*</sup></label>
-                                <input type="number" class="form-control">
+                                <input name="year" type="number" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Kilometre<sup>*</sup></label>
-                                <input type="text" class="form-control">
+                                <input name="km" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -85,7 +89,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Vites Türü<sup>*</sup></label>
-                                <select name="" id="" class="form-control">
+                                <select name="vites_turu" id="" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
                                     <option value="0">Manuel</option>
                                     <option value="1">Otomatik</option>
@@ -96,11 +100,11 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Yakıt Türü<sup>*</sup></label>
-                                <select name="" id="" class="form-control">
+                                <select name="yakit_turu" id="" class="form-control">
                                     <option value="" selected disabled>Seçiniz</option>
-                                    <option value="">benzin</option>
-                                    <option value="">dizel</option>
-                                    <option value="">lpg</option>
+                                    <option value="0">benzin</option>
+                                    <option value="1">dizel</option>
+                                    <option value="2">lpg</option>
                                 </select>
                             </div>
                         </div>
@@ -108,12 +112,12 @@
 
                     <div class="form-item">
                         <label class="form-label my-3">Renk <sup>*</sup></label>
-                        <input type="color" class="form-control">
+                        <input name="color" type="color" class="form-control">
                     </div>
 
                     <div class="form-item">
                         <label class="form-label my-3">Garanti Durumu<sup>*</sup></label>
-                        <select name="" id="" class="form-control">
+                        <select name="garanti_status" id="" class="form-control">
                             <option value="" selected disabled>Seçiniz</option>
                             <option value="1">Var</option>
                             <option value="0">Yok</option>
@@ -122,17 +126,17 @@
 
                     <div class="form-item">
                         <label class="form-label my-3">İlana Çıkma Tarihi<sup>*</sup></label>
-                        <input type="datetime-local" class="form-control">
+                        <input name="announcement_date" type="datetime-local" class="form-control" value="{{\Carbon\Carbon::now()->format('Y-m-d\TH:i')}}">
                     </div>
                     <div class="form-item">
                         <label class="form-label my-3">Fiyat<sup>*</sup></label>
-                        <input type="number" class="form-control">
+                        <input name="fiyat" type="number" class="form-control">
                     </div>
 
                     <div class="form-item mt-3">
-                        <textarea name="text" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Açıklama (Zorunlu Değildir)"></textarea>
+                        <textarea name="description" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Açıklama (Zorunlu Değildir)"></textarea>
                     </div>
-                    <button type="button" class="btn border-secondary py-3 mt-3 px-4 text-uppercase w-100 text-primary">Kaydet</button>
+                    <button type="submit" class="btn border-secondary py-3 mt-3 px-4 text-uppercase w-100 text-primary">Kaydet</button>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xl-5">
                     <div class="table-responsive">
@@ -190,6 +194,31 @@
         </form>
     </div>
 
+
+    <script>
+        $(document).ready(function() {
+            $('#city').on('change', function() {
+                var cityId = $(this).val();
+                if(cityId) {
+                    $.ajax({
+                        url: '/districts/' + cityId,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#district').empty();
+                            $('#district').append('<option value="" selected disabled>Seçiniz</option>');
+                            $.each(data, function(key, value) {
+                                $('#district').append('<option value="'+ value.id +'">'+ value.name +'</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('#district').empty();
+                    $('#district').append('<option value="" selected disabled>Seçiniz</option>');
+                }
+            });
+        });
+    </script>
 
 @endsection
 

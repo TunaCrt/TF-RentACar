@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\City;
 use App\Models\MediaGallery;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -18,23 +20,36 @@ class CarController extends Controller
 
     public function create()
     {
-        return view('panel.cars.create');
+        $cities = City::get();
+
+        return view('panel.cars.create',compact('cities'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|integer',
             'model_id' => 'required|integer',
-            'damage_id' => 'required|integer',
+            // 'damage_id' => 'required|integer',
             'year' => 'required|integer',
             'color' => 'required',
             'km' => 'required',
-            'garanti_status' => 'boolean',
+            'garanti_status' => 'boolean|required',
             'vites_turu' => 'required|min:0|max:2|integer',
             'yakit_turu' => 'required|min:0|max:2|integer',
             'status' => 'min:0|max:2|integer',
         ]);
+
+
+        $currentDate = Carbon::now();
+
+        $announcementDate = Carbon::parse($request->input('announcement_date'));
+
+        if ($announcementDate->isAfter($currentDate)){
+            $status = 0;
+        }else{
+            $status = 1;
+        }
+
 
         $car =Car::createCar(
             $request->model_id,
@@ -46,8 +61,8 @@ class CarController extends Controller
             $request->garanti_status,
             $request->vites_turu,
             $request->yakit_turu,
-            $request->announcement_date,
-            $request->status,               //announcement_date ile ilişkili bir değer yazılacak
+            $announcementDate,
+            $status,
             $request->fiyat,
             $request->description
         );
