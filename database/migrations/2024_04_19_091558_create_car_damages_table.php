@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('car_damages', function (Blueprint $table) {
             $table->id();
             $table->date('hasar_tarihi');
-            $table->text('description');
+            $table->text('damage_description');
             $table->timestamps();
         });
     }

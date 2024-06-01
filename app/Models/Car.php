@@ -17,6 +17,7 @@ class Car extends Model
 
     public static function createCar($model_id,$damage_id,$district_id,$year,$color,$km,$garanti_status,$vites_turu,$yakit_turu,$announcement_date,$status,$fiyat,$description)
     {
+
         $car = new Car();
         $car->user_id = Auth::id();
         $car->model_id = $model_id;
@@ -33,6 +34,8 @@ class Car extends Model
         $car->fiyat = $fiyat;
         $car->description = $description;
         $car->save();
+
+
 
         return $car;
 

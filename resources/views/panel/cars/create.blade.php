@@ -21,7 +21,6 @@
         <form action="{{route('cars.store')}}" method="post">
             @csrf
 
-            <input type="hidden" name="damage_id" value="1">
             <div class="row g-5">
                 <div class="col-md-12 col-lg-6 col-xl-7">
                     <div class="form-group">
@@ -128,6 +127,23 @@
                         <label class="form-label my-3">İlana Çıkma Tarihi<sup>*</sup></label>
                         <input name="announcement_date" type="datetime-local" class="form-control" value="{{\Carbon\Carbon::now()->format('Y-m-d\TH:i')}}">
                     </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-item">
+                                <label class="form-label my-3">Hasar Tarihi<sup>*</sup></label>
+                                <input type="date" name="hasar_tarihi" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="form-item">
+                                <label class="form-label my-3">Hasar Açıklaması<sup>*</sup></label>
+                                <input type="text" name="damage_description" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-item">
                         <label class="form-label my-3">Fiyat<sup>*</sup></label>
                         <input name="fiyat" type="number" class="form-control">

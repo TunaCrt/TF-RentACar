@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarDamage;
 use App\Models\City;
 use App\Models\MediaGallery;
 use Carbon\Carbon;
@@ -50,10 +51,16 @@ class CarController extends Controller
             $status = 1;
         }
 
+        $damage = CarDamage::create([
+            'hasar_tarihi' => $request->hasar_tarihi,
+            'damage_description' => $request->damage_description
+        ]);
+
+
 
         $car =Car::createCar(
             $request->model_id,
-            $request->damage_id,
+            $damage->id,
             $request->district_id,
             $request->year,
             $request->color,
