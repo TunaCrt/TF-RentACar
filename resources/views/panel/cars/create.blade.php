@@ -80,7 +80,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Kilometre<sup>*</sup></label>
-                                <input name="km" type="text" class="form-control">
+                                <input name="km" type="number" class="form-control">
                             </div>
                         </div>
                     </div>
