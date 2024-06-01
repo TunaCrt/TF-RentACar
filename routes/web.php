@@ -9,6 +9,11 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('panel.layouts.app');
 });
+Route::prefix('/cars')->name('cars.')->group(function (){
+    Route::get('/create',[CarController::class,'create'])->name('create');
+    Route::get('/index',[CarController::class,'index'])->name('index');
+
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -19,8 +24,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::prefix('/cars')->name('cars.')->group(function (){
-        Route::get('/create',[CarController::class,'create'])->name('create');
-    });
+
 
 });

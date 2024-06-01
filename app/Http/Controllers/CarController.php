@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 class CarController extends Controller
 {
 
+    public function index()
+    {
+
+
+        return view('panel.cars.index');
+    }
+
     public function create()
     {
         return view('panel.cars.create');

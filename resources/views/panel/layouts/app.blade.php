@@ -40,7 +40,7 @@
 
 <!-- Navbar start -->
 <div class="container-fluid fixed-top">
-    <div class="container topbar bg-primary d-none d-lg-block">
+    <div class="container topbar bg-danger d-none d-lg-block">
         <div class="d-flex justify-content-between">
             <div class="top-info ps-2">
                 <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
@@ -111,20 +111,20 @@
 </div>
 <!-- Modal Search End -->
 
-<!-- Hero Start -->
-<div class="container-fluid py-5 mb-5">
-    <div class="container py-5">
-
-    </div>
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Shop Detail</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item active text-white">Shop Detail</li>
+    </ol>
 </div>
 
 
-<!-- Hero End -->
-<div class="container-fluid featurs py-5">
-    <div class="container py-5">
+    <div class="container">
         @yield('content')
        </div>
-</div>
+
 
 
 <!-- Footer Start -->
