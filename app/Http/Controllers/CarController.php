@@ -92,7 +92,13 @@ class CarController extends Controller
         }
 
         return redirect()->route('cars.create')->with('success','Araba Oluşturuldu');
-
     }
+
+
+    public function show()
+    {
+        return 1;
+    }
+
 
 }

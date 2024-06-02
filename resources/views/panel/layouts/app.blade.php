@@ -27,6 +27,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('panel/css/style.css')}}" rel="stylesheet">
+    @yield('css')
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>

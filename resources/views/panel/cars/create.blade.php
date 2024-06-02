@@ -1,5 +1,27 @@
 @extends('panel.layouts.app')
 
+
+
+
+
+
+@section('css')
+
+    <style>
+        /* Tıklanabilir tablo satırları için imleç tipi ve arka plan rengi */
+        tbody tr {
+            cursor: pointer; /* İmleci el simgesine dönüştürür */
+            transition: background-color 0.3s ease; /* Renk değişiminde yumuşak geçiş sağlar */
+        }
+        tbody tr:hover {
+            background-color: #f0f0f0; /* Hover sırasında arka plan rengini değiştirir */
+        }
+    </style>
+@endsection
+
+
+
+
 @section('content')
 
     @if($errors->any())
@@ -170,7 +192,7 @@
                             <tbody>
 
                             @foreach($cars as $car)
-                                <tr>
+                                <tr data-url="{{ route('cars.show', $car->id) }}">
                                     <th scope="row">
                                         <div class="d-flex align-items-center mt-2">
                                             <img src="{{ asset('panel/img/' . $car->media->first()->media) }}" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
@@ -236,6 +258,12 @@
                     $('#model').append('<option value="" selected disabled>Seçiniz</option>');
                 }
             });
+
+            $("tbody tr").click(function(){
+                var url = $(this).data("url");
+                window.location.href = url;
+            });
+
         });
     </script>
 
