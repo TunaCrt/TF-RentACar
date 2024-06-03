@@ -198,7 +198,7 @@
                                             <img src="{{ asset('panel/img/' . $car->media->first()->media) }}" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
                                         </div>
                                     </th>
-                                    <td class="py-5">{{$car->getBrand()}}</td>
+                                    <td class="py-5">{{$car->getCarBrandName()}}</td>
                                     <td class="py-5">{{$car->model->name}}</td>
                                     <td class="py-5">{{$car->getCity()}}</td>
                                     <td class="py-5">{{$car->fiyat}}</td>
@@ -208,7 +208,6 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </form>

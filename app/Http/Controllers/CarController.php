@@ -23,7 +23,7 @@ class CarController extends Controller
     public function create()
     {
         $cities = City::get();
-        $cars = Car::latest()->take(8)->get();
+        $cars = Car::where('status',1)->latest()->take(8)->get();
         $brands = CarBrand::get();
         return view('panel.cars.create',compact('cities','cars','brands'));
     }
@@ -95,9 +95,12 @@ class CarController extends Controller
     }
 
 
-    public function show()
+    public function show($id)
     {
-        return 1;
+        $car = Car::find($id);
+        $cars = Car::where('status',1)->latest()->take(8)->get();
+
+        return view('panel.cars.show',compact('car','cars'));
     }
 
 

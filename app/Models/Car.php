@@ -40,9 +40,19 @@ class Car extends Model
     }
 
 
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
     public function model()
     {
       return $this->belongsTo(CarModel::class,'model_id','id');
+    }
+
+    public function getCarBrandName()
+    {
+        return $this->model->brand->name;
     }
 
     public function district()
@@ -53,10 +63,6 @@ class Car extends Model
     public function getCity()
     {
        return $this->district->city->title;
-    }
-    public function getBrand()
-    {
-        return $this->model->brand->name;
     }
 
     public function media()
