@@ -31,7 +31,6 @@
                         <div class="col-md-12 col-lg-6 col-xl-7">
                             <label class="form-label my-2">Marka İsmi<sup>*</sup></label>
                             <select name="brand_id" id="brand_id" class="form-control">
-                                <option value="" selected disabled>Seçiniz</option>
                                 @foreach($brands as $brand)
                                     <option value="{{$brand->id}}" @if($brands->count()==1) selected @endif>{{$brand->name}}</option>
                                 @endforeach

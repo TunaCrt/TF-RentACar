@@ -24,7 +24,7 @@ class ModelController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'brand_id' => 'required' ,
+            'brand_id' => 'required|integer' ,
             'name' => 'required'
         ]);
 
