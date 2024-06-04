@@ -94,9 +94,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-lg-6">
-                            <div class="form-item">
+                            <div class="form-item w-100">
                                 <label class="form-label my-3">Yıl<sup>*</sup></label>
-                                <input name="year" type="number" class="form-control">
+                                <select name="year" id="year" class="form-control">
+                                    <option value="" selected disabled>Seçiniz</option>
+                                    @for($i = 1990; $i < \Carbon\Carbon::now()->year +2; $i++)
+                                        <option value="{{$i}}">{{$i}}</option>
+                                    @endfor
+
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6">
