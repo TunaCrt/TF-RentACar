@@ -68,7 +68,7 @@
                             <div class="row g-4 justify-content-center">
                                 @foreach($brands as $brand)
                                     <div class="col-md-6 col-lg-6 col-xl-3">
-                                        <a href="#" class="text-decoration-none">
+                                        <a href="{{route('admin.model.create',$brand->id)}}" class="text-decoration-none">
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
                                                 <img src="{{asset('panel/img/' . $brand->photo)}}" class="img-fluid w-100  rounded-top" alt="">
