@@ -11,4 +11,18 @@ class CarBrand extends Model
 
     protected $table = 'car_brands';
 
+
+    public function models()
+    {
+        return $this->hasMany(CarModel::class,'brand_id','id');
+    }
+    public function cars()
+    {
+        return $this->hasManyThrough(Car::class,CarModel::class,'brand_id','model_id','id','id');
+    }
+
+    public function getCountCars(){
+        return $this->cars->where('status',1)->count();
+    }
+
 }

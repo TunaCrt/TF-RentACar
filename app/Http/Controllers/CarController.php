@@ -33,11 +33,15 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'model_id' => 'required|integer',
+            'brand_id' =>'required|integer',
             // 'damage_id' => 'required|integer',
+            'district_id' => 'required|integer',
+            'city_id' => 'required|integer',
             'year' => 'required|integer',
             'color' => 'required',
-            'km' => 'required',
+            'km' => 'required|integer',
             'garanti_status' => 'boolean|required',
             'vites_turu' => 'required|min:0|max:2|integer',
             'yakit_turu' => 'required|min:0|max:2|integer',

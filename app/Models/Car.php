@@ -70,5 +70,9 @@ class Car extends Model
         return $this->hasMany(MediaGallery::class,'car_id','id');
     }
 
+    public function formatFiyat()
+    {
+        return number_format($this->fiyat,0,',','.');
+    }
 
 }
