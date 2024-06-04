@@ -71,7 +71,7 @@
                                                 <p>    <td class="py-5">{{$car->model->name}}</td>
                                                 </p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->fiyat}}</p>
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->formatFiyat()}}</p>
                                                     <p class="text-dark fs-5 fw-bold mb-0">Şehir: {{$car->getCity()}}</p>
                                                     <a href="{{route('cars.show',$car->id)}}" class="m-4 btn border border-secondary rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
                                                 </div>

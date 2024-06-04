@@ -207,7 +207,7 @@
                                     <td class="py-5">{{$car->getCarBrandName()}}</td>
                                     <td class="py-5">{{$car->model->name}}</td>
                                     <td class="py-5">{{$car->getCity()}}</td>
-                                    <td class="py-5">{{$car->fiyat}}</td>
+                                    <td class="py-5">{{$car->formatFiyat()}}</td>
                                 </tr>
                             @endforeach
 
