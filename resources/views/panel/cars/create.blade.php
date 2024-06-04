@@ -7,7 +7,7 @@
 
 @section('css')
 
-    <style>
+
         /* Tıklanabilir tablo satırları için imleç tipi ve arka plan rengi */
         tbody tr {
             cursor: pointer; /* İmleci el simgesine dönüştürür */
@@ -16,7 +16,7 @@
         tbody tr:hover {
             background-color: #f0f0f0; /* Hover sırasında arka plan rengini değiştirir */
         }
-    </style>
+
 @endsection
 
 
