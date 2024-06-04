@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fruitables - Vegetable Website Template</title>
+    <title>TF-RentACar</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -66,7 +66,7 @@
                 <div class="navbar-nav mx-auto">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="{{route('cars.create')}}" class="nav-item nav-link">İlan Ver</a>
-                    <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
+                    <a href="{{route('admin.brand.index')}}" class="nav-item nav-link">Markalar</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0 bg-secondary rounded-0">
