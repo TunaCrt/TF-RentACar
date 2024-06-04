@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fruitables - Vegetable Website Template</title>
+    <title>RentACar</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -36,7 +36,7 @@
 
 <!-- Spinner Start -->
 <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-    <div class="spinner-grow text-primary" role="status"></div>
+    <div class="spinner-grow text-danger" role="status"></div>
 </div>
 <!-- Spinner End -->
 
@@ -46,8 +46,8 @@
     <div class="container topbar bg-danger d-none d-lg-block">
         <div class="d-flex justify-content-between">
             <div class="top-info ps-2">
-                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">123 Street, New York</a></small>
-                <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">Email@Example.com</a></small>
+                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-danger"></i> <a href="#" class="text-white">123 Street, New York</a></small>
+                <small class="me-3"><i class="fas fa-envelope me-2 text-danger"></i><a href="#" class="text-white">Email@Example.com</a></small>
             </div>
             <div class="top-link pe-2">
                 <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
@@ -58,9 +58,9 @@
     </div>
     <div class="container px-0">
         <nav class="navbar navbar-light bg-white navbar-expand-xl">
-            <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Fruitables</h1></a>
+            <a href="index.html" class="navbar-brand"><h1 class="text-danger display-6">Fruitables</h1></a>
             <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars text-primary"></span>
+                <span class="fa fa-bars text-danger"></span>
             </button>
             <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
@@ -69,7 +69,7 @@
                     <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                        <div class="dropdown-menu m-0 bg-danger rounded-0">
                             <a href="cart.html" class="dropdown-item">Cart</a>
                             <a href="chackout.html" class="dropdown-item">Chackout</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
@@ -79,10 +79,10 @@
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-flex m-3 me-0">
-                    <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                    <button class="btn-search btn border border-danger btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-danger"></i></button>
                     <a href="#" class="position-relative me-4 my-auto">
                         <i class="fa fa-shopping-bag fa-2x"></i>
-                        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                        <span class="position-absolute bg-danger rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                     </a>
                     <a href="#" class="my-auto">
                         <i class="fas fa-user fa-2x"></i>
@@ -137,22 +137,22 @@
             <div class="row g-4">
                 <div class="col-lg-3">
                     <a href="#">
-                        <h1 class="text-primary mb-0">Fruitables</h1>
-                        <p class="text-secondary mb-0">Fresh products</p>
+                        <h1 class="text-danger mb-0">Fruitables</h1>
+                        <p class="text-danger mb-0">Fresh products</p>
                     </a>
                 </div>
                 <div class="col-lg-6">
                     <div class="position-relative mx-auto">
                         <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                        <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                        <button type="submit" class="btn btn-danger border-0 border-danger py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="d-flex justify-content-end pt-3">
-                        <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn  btn-outline-danger me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-danger me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-danger me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-danger btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                     <h4 class="text-light mb-3">Why People Like us!</h4>
                     <p class="mb-4">typesetting, remaining essentially unchanged. It was
                         popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
-                    <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                    <a href="" class="btn border-danger py-2 px-4 rounded-pill text-danger">Read More</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -224,7 +224,7 @@
 
 
 <!-- Back to Top -->
-<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+<a href="#" class="btn btn-danger border-3 border-danger rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
 <!-- JavaScript Libraries -->

@@ -70,7 +70,7 @@
 }
 
 .btn.border-secondary:hover {
-    background: var(--bs-secondary) !important;
+    background: var(--bs-danger) !important;
     color: var(--bs-white) !important;
 }
 
@@ -107,12 +107,12 @@
 }
 
 .topbar .top-link a small:hover {
-    color: var(--bs-secondary) !important;
+    color: var(--bs-danger) !important;
     transition: 0.5s;
 }
 
 .topbar .top-link a small:hover i {
-    color: var(--bs-primary) !important;
+    color: var(--bs-danger) !important;
 }
 /*** Topbar End ***/
 
@@ -158,7 +158,7 @@
 }
 
 .dropdown .dropdown-menu a:hover {
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
     color: var(--bs-danger);
 }
 
@@ -203,7 +203,7 @@
     height: 48px;
     border-radius: 48px;
     border: 1px solid var(--bs-white);
-    background: var(--bs-primary);
+    background: var(--bs-danger);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -252,12 +252,12 @@
     content: "";
     width: 35px;
     height: 35px;
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
     position: absolute;
     bottom: -10px;
     transform: translate(-50%);
     transform: rotate(45deg);
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
 
 }
 /*** featurs End ***/
@@ -278,7 +278,7 @@
 
 /*** Fruits Start ***/
 .fruite .tab-class .nav-item a.active {
-    background: var(--bs-secondary) !important;
+    background: var(--bs-danger) !important;
 }
 
 .fruite .tab-class .nav-item a.active span {
@@ -294,7 +294,7 @@
 }
 
 .fruite .fruite-categorie .fruite-name a:hover {
-    color: var(--bs-secondary);
+    color: var(--bs-danger);
 }
 
 .fruite .fruite-item {
@@ -354,16 +354,16 @@
     position: absolute;
     top: -8px;
     right: 0;
-    color: var(--bs-primary);
+    color: var(--bs-danger);
     padding: 5px 25px;
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid var(--bs-danger);
     border-radius: 20px;
     transition: 0.5s;
 
 }
 
 .vesitable .owl-nav .owl-prev:hover {
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
     color: var(--bs-white);
 }
 
@@ -371,15 +371,15 @@
     position: absolute;
     top: -8px;
     right: 88px;
-    color: var(--bs-primary);
+    color: var(--bs-danger);
     padding: 5px 25px;
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid var(--bs-danger);
     border-radius: 20px;
     transition: 0.5s;
 }
 
 .vesitable .owl-nav .owl-next:hover {
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
     color: var(--bs-white);
 }
 /*** vesitable End ***/
@@ -387,7 +387,7 @@
 
 /*** Banner Section Start ***/
 .banner .banner-btn:hover {
-    background: var(--bs-primary);
+    background: var(--bs-danger);
 }
 /*** Banner Section End ***/
 
@@ -405,7 +405,7 @@
 }
 
 .counter h4 {
-    color: var(--bs-primary);
+    color: var(--bs-danger);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -421,15 +421,15 @@
     position: absolute;
     top: -58px;
     right: 0;
-    color: var(--bs-primary);
+    color: var(--bs-danger);
     padding: 5px 25px;
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid var(--bs-danger);
     border-radius: 20px;
     transition: 0.5s;
 }
 
 .testimonial .owl-nav .owl-prev:hover {
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
     color: var(--bs-white);
 }
 
@@ -437,15 +437,15 @@
     position: absolute;
     top: -58px;
     right: 88px;
-    color: var(--bs-primary);
+    color: var(--bs-danger);
     padding: 5px 25px;
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid var(--bs-danger);
     border-radius: 20px;
     transition: 0.5s;
 }
 
 .testimonial .owl-nav .owl-next:hover {
-    background: var(--bs-secondary);
+    background: var(--bs-danger);
     color: var(--bs-white);
 }
 /*** testimonial End ***/
@@ -461,7 +461,7 @@
     padding: 10px 16px;
     text-decoration: none;
     transition: 0.5s;
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid var(--bs-danger);
     margin: 0 4px;
 }
 
@@ -474,7 +474,7 @@
 .pagination a:hover:not(.active) {background-color: var(--bs-danger)}
 
 .nav.nav-tabs .nav-link.active {
-    border-bottom: 2px solid var(--bs-secondary) !important;
+    border-bottom: 2px solid var(--bs-danger) !important;
 }
 /*** Single Page End ***/
 
@@ -487,7 +487,7 @@
 }
 
 .footer .footer-item .btn-link:hover {
-    color: var(--bs-secondary) !important;
+    color: var(--bs-danger) !important;
 }
 
 .footer .footer-item p.mb-4 {

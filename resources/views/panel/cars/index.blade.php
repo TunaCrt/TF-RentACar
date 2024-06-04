@@ -36,7 +36,7 @@
                                         <ul class="list-unstyled fruite-categorie">
                                             <li>
                                                 <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
+                                                    <a href="#"><i class="fas fa-car-alt me-2"></i>BMW</a>
                                                     <span>(3)</span>
                                                 </div>
                                             </li>
@@ -61,24 +61,30 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-9">
+
                             <div class="row g-4 justify-content-center">
-                                <div class="col-12">
-                                    <div class="rounded position-relative fruite-item">
-                                        <div class="fruite-img">
-                                            <img src="{{asset("Cars/Photos/logo.jpeg")}}" class="img-fluid w-100 rounded-top">
-                                        </div>
-                                        <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                @foreach($cars as $car)
+                                    <div class="col-12">
+                                        <div class="border border-secondary rounded-bottom rounded position-relative fruite-item" style="display: flex; align-items: center;">
+                                            <div class="fruite-img" style="flex: 1;" >
+                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}" class="img-fluid w-100 rounded" height="215" style="max-width: 210px; object-fit: cover;">
+                                            </div>
+
+                                            <div class="" style="flex: 2;">
+                                                <h4>{{$car->getCarBrandName()}}</h4>
+                                                <p>    <td class="py-5">{{$car->model->name}}</td>
+                                                </p>
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->fiyat}}</p>
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Şehir: {{$car->getCity()}}</p>
+                                                    <a href="#" class="m-4 btn border border-secondary rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                                 <div class="col-12">
                                     <div class="pagination d-flex justify-content-center mt-5">
                                         <a href="#" class="rounded">«</a>
