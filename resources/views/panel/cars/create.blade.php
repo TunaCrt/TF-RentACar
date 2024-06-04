@@ -175,7 +175,7 @@
                     <div class="form-item mt-3">
                         <textarea name="description" class="form-control" spellcheck="false" cols="30" rows="11" placeholder="Açıklama (Zorunlu Değildir)"></textarea>
                     </div>
-                    <button type="submit" class="btn border-secondary py-3 mt-3 px-4 text-uppercase w-100 text-primary">Kaydet</button>
+                    <button type="submit" class="btn border-danger py-3 mt-3 px-4 text-uppercase w-100 text-danger">Kaydet</button>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xl-5">
                     <div class="table-responsive">

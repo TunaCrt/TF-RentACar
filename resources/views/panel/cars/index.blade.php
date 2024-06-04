@@ -38,7 +38,7 @@
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
                                                         <a href="#"><i class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
-                                                        <span>(3)</span>
+                                                        <span>({{$brand->count()}})</span>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -49,17 +49,8 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <h4 class="mb-2">Price</h4>
-                                        <input type="range" class="form-range w-100" id="rangeInput" name="rangeInput" min="0" max="500" value="0" oninput="amount.value=rangeInput.value">
+                                        <input type="range" class="form-range w-100" id="rangeInput" name="rangeInput" min="0" max="1000000" value="0" oninput="amount.value=rangeInput.value">
                                         <output id="amount" name="amount" min-velue="0" max-value="500" for="rangeInput">0</output>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="mb-3">
-                                        <h4>Additional</h4>
-                                        <div class="mb-2">
-                                            <input type="radio" class="me-2" id="Categories-1" name="Categories-1" value="Beverages">
-                                            <label for="Categories-1"> Organic</label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +63,7 @@
                                     <div class="col-12">
                                         <div class="border border-secondary rounded-bottom rounded position-relative fruite-item" style="display: flex; align-items: center;">
                                             <div class="fruite-img" style="flex: 1;" >
-                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}" class="img-fluid w-100 rounded" height="215" style="max-width: 210px; object-fit: cover;">
+                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}" class="img-fluid w-100 rounded"  style="max-width: 280px; max-height: 170px; object-fit: cover;">
                                             </div>
 
                                             <div class="" style="flex: 2;">
@@ -82,7 +73,7 @@
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
                                                     <p class="text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->fiyat}}</p>
                                                     <p class="text-dark fs-5 fw-bold mb-0">Şehir: {{$car->getCity()}}</p>
-                                                    <a href="#" class="m-4 btn border border-secondary rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
+                                                    <a href="{{route('cars.show',$car->id)}}" class="m-4 btn border border-secondary rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
                                                 </div>
                                             </div>
                                         </div>
