@@ -33,7 +33,7 @@ Route::prefix('/admin')->name('admin.')->group(function (){
 
     Route::prefix('/model')->name('model.')->group(function (){
 
-        Route::get('/create',[ModelController::class,'create'])->name('create');
+        Route::get('/create/{id?}',[ModelController::class,'create'])->name('create');
         Route::get('/index',[ModelController::class,'index'])->name('index');
         Route::get('/show/{id}',[ModelController::class,'show'])->name('show');
         Route::post('/store',[ModelController::class,'store'])->name('store');
