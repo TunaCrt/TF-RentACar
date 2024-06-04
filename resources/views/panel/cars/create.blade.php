@@ -264,7 +264,34 @@
             });
 
         });
+
+        $(document).ready(function() {
+            // Form gönderildiğinde
+            $("#myForm").submit(function(e) {
+                e.preventDefault(); // Sayfa yeniden yüklenmesini engelle
+
+                // Boş bırakılan kutuları kontrol et
+                const formData = new FormData(this);
+                let emptyFields = [];
+                formData.forEach((value, key) => {
+                    if (value.trim() === "") {
+                        emptyFields.push(key);
+                    }
+                });
+
+                if (emptyFields.length > 0) {
+                    // Boş bırakılan kutuları işaretle veya hata mesajı göster
+                    console.log("Boş bırakılan alanlar: " + emptyFields.join(", "));
+                    // Hata mesajını göstermek için uygun bir yöntem kullanabilirsiniz
+                    // Örneğin: alert("Lütfen tüm alanları doldurun!");
+                } else {
+                    // Boş bırakılan alan yoksa formu gönder
+                    this.submit();
+                }
+            });
+        });
     </script>
+
 
 @endsection
 
