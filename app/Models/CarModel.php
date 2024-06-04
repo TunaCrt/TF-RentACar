@@ -9,6 +9,13 @@ class CarModel extends Model
 {
     use HasFactory;
 
+    protected $table = 'car_models';
+
+    protected $fillable = [
+        'brand_id',
+        'name'
+    ];
+
     public function brand()
     {
         return $this->belongsTo(CarBrand::class,'brand_id','id');
