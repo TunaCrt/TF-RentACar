@@ -38,7 +38,7 @@
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
                                                         <a href="#"><i class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
-                                                        <span>({{$brand->count()}})</span>
+                                                        <span>({{$brand->getCountCars()}})</span>
                                                     </div>
                                                 </li>
                                             @endforeach
