@@ -32,14 +32,17 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="mb-3">
-                                        <h4>Categories</h4>
+                                        <h4>Markalar</h4>
                                         <ul class="list-unstyled fruite-categorie">
-                                            <li>
-                                                <div class="d-flex justify-content-between fruite-name">
-                                                    <a href="#"><i class="fas fa-car-alt me-2"></i>BMW</a>
-                                                    <span>(3)</span>
-                                                </div>
-                                            </li>
+                                            @foreach($brands as $brand)
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
+                                                        <span>(3)</span>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+
                                         </ul>
                                     </div>
                                 </div>

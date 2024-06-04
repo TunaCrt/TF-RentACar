@@ -16,9 +16,10 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::where('status',1)->latest()->take(8)->get();
+        $brands = CarBrand::get();
 
 
-        return view('panel.cars.index',compact('cars'));
+        return view('panel.cars.index',compact('cars','brands'));
     }
 
     public function create()
