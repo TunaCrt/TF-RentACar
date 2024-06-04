@@ -37,7 +37,7 @@
                                             @foreach($brands as $brand)
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
+                                                        <a href="{{route('cars.index', $brand->id)}}"><i class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
                                                         <span>({{$brand->getCountCars()}})</span>
                                                     </div>
                                                 </li>

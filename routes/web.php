@@ -15,7 +15,7 @@ Route::get('/index', function () {
 });
 Route::prefix('/cars')->name('cars.')->group(function (){
     Route::get('/create',[CarController::class,'create'])->name('create');
-    Route::get('/index',[CarController::class,'index'])->name('index');
+    Route::get('/index/{id?}',[CarController::class,'index'])->name('index');
     Route::get('/show/{id}',[CarController::class,'show'])->name('show');
     Route::post('/store',[CarController::class,'store'])->name('store');
 

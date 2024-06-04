@@ -13,9 +13,15 @@ use Illuminate\Http\Request;
 class CarController extends Controller
 {
 
-    public function index()
+    public function index($id = 0)
     {
-        $cars = Car::where('status',1)->latest()->take(8)->get();
+        if ($id==0){
+            $cars = Car::where('status',1)->latest()->take(8)->get();
+        }else{
+            $brand = CarBrand::find($id);
+            $cars = $brand->cars->where('status',1);
+        }
+
         $brands = CarBrand::get();
 
 
