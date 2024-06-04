@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container py-5">
-        <h1 class="mb-4">Araba Bilgileri</h1>
+        <h1 class="mb-4">Marka Bilgileri</h1>
         <form action="{{route('admin.brand.store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
