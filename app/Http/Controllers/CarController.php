@@ -16,7 +16,7 @@ class CarController extends Controller
     public function index($id = 0)
     {
         if ($id==0){
-            $cars = Car::where('status',1)->latest()->take(8)->get();
+            $cars = Car::where('status',1)->latest()->paginate(5);
         }else{
             $brand = CarBrand::find($id);
             $cars = $brand->cars->where('status',1);
@@ -39,7 +39,7 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            //'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'model_id' => 'required|integer',
             'brand_id' =>'required|integer',
             // 'damage_id' => 'required|integer',
