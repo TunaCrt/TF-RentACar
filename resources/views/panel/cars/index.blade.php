@@ -4,7 +4,7 @@
 
     <div class="container-fluid fruite py-5">
         <div class="container py-5">
-            <h1 class="mb-4">Fresh fruits shop</h1>
+            <h1 class="mb-4">TF-RentACar</h1>
             <div class="row g-4">
                 <div class="col-lg-12">
                     <div class="row g-4">
@@ -61,26 +61,29 @@
                             <div class="row g-4 justify-content-center">
                                 @foreach($cars as $car)
                                     <div class="col-12">
-                                        <div class="border border-secondary rounded-bottom rounded position-relative fruite-item" style="display: flex; align-items: center;">
-                                            <div class="fruite-img" style="flex: 1;" >
-                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}" class="img-fluid w-100 rounded"  style="max-width: 280px; max-height: 170px; object-fit: cover;">
+                                        <div class="border border-danger rounded-bottom rounded position-relative fruite-item" style="display: flex; align-items: center;">
+                                            <div class="fruite-img" style="flex: 1;">
+                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}" class="img-fluid rounded" style="max-width: 96%; height: auto; object-fit: cover;">
                                             </div>
 
                                             <div class="" style="flex: 2;">
-                                                <h4>{{$car->getCarBrandName()}}</h4>
-                                                <p>    <td class="py-5">{{$car->model->name}}</td>
-                                                </p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->formatFiyat()}}</p>
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Şehir: {{$car->getCity()}}</p>
-                                                    <a href="{{route('cars.show',$car->id)}}" class="m-4 btn border border-secondary rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
+                                                    <h4 class="">{{$car->getCarBrandName()}}</h4>
+
+                                                </div>
+
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p style="padding: 0px 20px 20px 10px;" class="" >{{$car->model->name}}</p>
+                                                    <p class="pt-5 text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->formatFiyat()}}</p>
+                                                    <p class="pt-5 text-dark fs-5 fw-bold mb-0">Şehir: {{$car->getCity()}}</p>
+                                                    <a href="{{route('cars.show',$car->id)}}" class="m-4 btn border border-danger rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
                                 <div class="col-12">
-                                    <div class="pagination d-flex justify-content-center mt-5">
+                                    <div class="rounded pagination d-flex justify-content-center mt-5">
                                         {{ $cars->links()}}
                                     </div>
                                 </div>

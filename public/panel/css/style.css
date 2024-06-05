@@ -70,7 +70,15 @@
 }
 
 .btn.border-secondary:hover {
-    background: var(--bs-danger) !important;
+    background: var(--bs-dark) !important;
+    color: var(--bs-white) !important;
+}
+.btn.border-danger {
+    transition: 0.5s;
+}
+
+.btn.border-danger:hover {
+    background: var(--bs-dark) !important;
     color: var(--bs-white) !important;
 }
 
