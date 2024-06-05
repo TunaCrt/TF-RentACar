@@ -39,7 +39,7 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            //'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'model_id' => 'required|integer',
             'brand_id' =>'required|integer',
             // 'damage_id' => 'required|integer',
@@ -112,7 +112,12 @@ class CarController extends Controller
         $car = Car::find($id);
         $cars = Car::where('status',1)->latest()->take(8)->get();
 
-        return view('panel.cars.show',compact('car','cars'));
+        if ($car->status == 1){
+            return view('panel.cars.show',compact('car','cars'));
+
+        }
+
+        return redirect()->back();
     }
 
 

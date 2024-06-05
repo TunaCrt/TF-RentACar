@@ -53,8 +53,8 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">İl<sup>*</sup></label>
-                                <select name="city_id" id="city" class="form-control">
-                                    <option value="" selected disabled>Seçiniz</option>
+                                <select name="city_id" id="city" class="form-control" required>
+                                    <option value="" selected disabled >Seçiniz</option>
                                     @foreach($cities as $city)
                                         <option value="{{$city->id}}">{{$city->title}}</option>
                                     @endforeach
@@ -64,7 +64,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">İlçe<sup>*</sup></label>
-                                <select name="district_id" id="district" class="form-control">
+                                <select name="district_id" id="district" class="form-control" required>
                                     <option value="" selected disabled>Seçiniz</option>
                                 </select>
                             </div>
@@ -75,7 +75,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Marka<sup>*</sup></label>
-                                <select name="brand_id" id="brand" class="form-control">
+                                <select name="brand_id" id="brand" class="form-control" required>
                                     <option value="" selected disabled>Seçiniz</option>
                                     @foreach($brands as $brand)
                                         <option value="{{$brand->id}}">{{$brand->name}}</option>
@@ -86,7 +86,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Model<sup>*</sup></label>
-                                <select name="model_id" id="model" class="form-control">
+                                <select name="model_id" id="model" class="form-control" required>
                                     <option value="" selected disabled>Seçiniz</option>
                                 </select>
                             </div>
@@ -96,7 +96,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item w-100">
                                 <label class="form-label my-3">Yıl<sup>*</sup></label>
-                                <select name="year" id="year" class="form-control">
+                                <select name="year" id="year" class="form-control" required>
                                     <option value="" selected disabled>Seçiniz</option>
                                     @for($i = 1990; $i < \Carbon\Carbon::now()->year +2; $i++)
                                         <option value="{{$i}}">{{$i}}</option>
@@ -108,7 +108,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Kilometre<sup>*</sup></label>
-                                <input name="km" type="number" class="form-control">
+                                <input name="km" type="number" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Vites Türü<sup>*</sup></label>
-                                <select name="vites_turu" id="" class="form-control">
+                                <select name="vites_turu" id="" class="form-control" required>
                                     <option value="" selected disabled>Seçiniz</option>
                                     <option value="0">Manuel</option>
                                     <option value="1">Otomatik</option>
@@ -128,7 +128,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Yakıt Türü<sup>*</sup></label>
-                                <select name="yakit_turu" id="" class="form-control">
+                                <select name="yakit_turu" id="" class="form-control" required>
                                     <option value="" selected disabled>Seçiniz</option>
                                     <option value="0">benzin</option>
                                     <option value="1">dizel</option>
@@ -145,7 +145,7 @@
 
                     <div class="form-item">
                         <label class="form-label my-3">Garanti Durumu<sup>*</sup></label>
-                        <select name="garanti_status" id="" class="form-control">
+                        <select name="garanti_status" id="" class="form-control" required>
                             <option value="" selected disabled>Seçiniz</option>
                             <option value="1">Var</option>
                             <option value="0">Yok</option>
@@ -162,7 +162,7 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="form-item">
                                 <label class="form-label my-3">Hasar Tarihi<sup>*</sup></label>
-                                <input type="date" name="hasar_tarihi" class="form-control">
+                                <input type="date" name="hasar_tarihi" class="form-control" >
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6">
@@ -175,7 +175,7 @@
 
                     <div class="form-item">
                         <label class="form-label my-3">Fiyat<sup>*</sup></label>
-                        <input name="fiyat" type="number" class="form-control">
+                        <input name="fiyat" type="number" class="form-control" required>
                     </div>
 
                     <div class="form-item mt-3">

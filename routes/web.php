@@ -14,31 +14,14 @@ Route::get('/index', function () {
     return view('panel.layouts.app');
 });
 Route::prefix('/cars')->name('cars.')->group(function (){
-    Route::get('/create',[CarController::class,'create'])->name('create');
     Route::get('/index/{id?}',[CarController::class,'index'])->name('index');
+    Route::get('/create',[CarController::class,'create'])->name('create');
     Route::get('/show/{id}',[CarController::class,'show'])->name('show');
     Route::post('/store',[CarController::class,'store'])->name('store');
 
 });
 
-Route::prefix('/admin')->name('admin.')->group(function (){
-    Route::prefix('/brand')->name('brand.')->group(function (){
 
-        Route::get('/create',[BrandController::class,'create'])->name('create');
-        Route::get('/index',[BrandController::class,'index'])->name('index');
-        Route::get('/show/{id}',[BrandController::class,'show'])->name('show');
-        Route::post('/store',[BrandController::class,'store'])->name('store');
-
-    });
-
-    Route::prefix('/model')->name('model.')->group(function (){
-
-        Route::get('/create/{id}',[ModelController::class,'create'])->name('create');
-        Route::post('/store',[ModelController::class,'store'])->name('store');
-
-    });
-
-});
 
 
 
@@ -64,6 +47,27 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    //admin start
+    Route::prefix('/admin')->name('admin.')->group(function (){
+        Route::prefix('/brand')->name('brand.')->group(function (){
 
+            Route::get('/create',[BrandController::class,'create'])->name('create');
+            Route::get('/index',[BrandController::class,'index'])->name('index');
+            Route::post('/store',[BrandController::class,'store'])->name('store');
+
+        });
+        Route::prefix('/model')->name('model.')->group(function (){
+            Route::get('/create/{id}',[ModelController::class,'create'])->name('create');
+            Route::post('/store',[ModelController::class,'store'])->name('store');
+        });
+    });
+    //admin end
+
+    Route::prefix('/cars')->name('cars.')->group(function (){
+        Route::get('/create',[CarController::class,'create'])->name('create');
+        Route::get('/show/{id}',[CarController::class,'show'])->name('show');
+        Route::post('/store',[CarController::class,'store'])->name('store');
+
+    });
 
 });
