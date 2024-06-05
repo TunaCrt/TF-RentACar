@@ -66,7 +66,7 @@
             </button>
             <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="{{route('cars.index')}}" class="nav-item nav-link {{ request()->routeIs('cars.index') ? 'active' : '' }}">Home</a>
+                    <a href="{{route('cars.index')}}" class="nav-item nav-link {{ request()->routeIs('cars.index') ? 'active' : '' }}">Ana Sayfa</a>
                     <a href="{{route('cars.create')}}" class="nav-item nav-link {{ request()->routeIs('cars.create') ? 'active' : '' }}">İlan Ver</a>
                     <a href="{{route('admin.brand.index')}}" class="nav-item nav-link {{ request()->routeIs('admin.brand.index') ? 'active' : '' }}">Markalar</a>
 
