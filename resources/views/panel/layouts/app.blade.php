@@ -70,26 +70,30 @@
                     <a href="{{route('cars.create')}}" class="nav-item nav-link {{ request()->routeIs('cars.create') ? 'active' : '' }}">İlan Ver</a>
                     <a href="{{route('admin.brand.index')}}" class="nav-item nav-link {{ request()->routeIs('admin.brand.index') ? 'active' : '' }}">Markalar</a>
 
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-flex m-3 me-0">
                     <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-dark"></i></button>
 
 
-                    <div class="dropdown ">
-                    <a href="#" class="my-auto m-1 btn btn-dark dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="dropdown">
+                    <a href="#" class="btn my-auto dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user fa-2x ">
 
                         </i>
                     </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item text-info" href="{{ route('profile.show') }}">Profil</a></li>
+                            <li>
+                                <a class="dropdown-item text-dark btn" href="{{ route('profile.show') }}">Profil</a>
+                            </li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}" >
+                                    @csrf
+                                    <button class="btn btn-black text-danger"> Çıkış Yap</button>
 
-                            <form method="POST" action="{{ route('logout') }}" >
-                                @csrf
-                                <button class="btn btn-info text-black"> Çıkış Yap</button>
+                                </form>
+                            </li>
 
-                            </form>
 
                         </ul>
                     </div>
