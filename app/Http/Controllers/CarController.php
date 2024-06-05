@@ -112,7 +112,12 @@ class CarController extends Controller
         $car = Car::find($id);
         $cars = Car::where('status',1)->latest()->take(8)->get();
 
-        return view('panel.cars.show',compact('car','cars'));
+        if ($car->status == 1){
+            return view('panel.cars.show',compact('car','cars'));
+
+        }
+
+        return redirect()->back();
     }
 
 
