@@ -60,7 +60,7 @@
     </div>
     <div class="container px-0">
         <nav class="navbar navbar-light bg-white navbar-expand-xl">
-            <a href="#" class="navbar-brand"><h1 class="text-danger display-6">Fruitables</h1></a>
+            <a href="#" class="navbar-brand"><h1 class="text-danger display-6">TF-RentACar</h1></a>
             <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars text-danger"></span>
             </button>
@@ -69,15 +69,7 @@
                     <a href="{{route('cars.index')}}" class="nav-item nav-link {{ request()->routeIs('cars.index') ? 'active' : '' }}">Home</a>
                     <a href="{{route('cars.create')}}" class="nav-item nav-link {{ request()->routeIs('cars.create') ? 'active' : '' }}">İlan Ver</a>
                     <a href="{{route('admin.brand.index')}}" class="nav-item nav-link {{ request()->routeIs('admin.brand.index') ? 'active' : '' }}">Markalar</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                            <a href="cart.html" class="dropdown-item">Cart</a>
-                            <a href="chackout.html" class="dropdown-item">Chackout</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div>
+
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-flex m-3 me-0">
@@ -161,8 +153,8 @@
             <div class="row g-4">
                 <div class="col-lg-3">
                     <a href="#">
-                        <h1 class="text-danger mb-0">Fruitables</h1>
-                        <p class="text-secondary mb-0">Fresh products</p>
+                        <h1 class="text-danger mb-0">TF-RentACar</h1>
+                        <p class="text-secondary mb-0">Kalitenin adresi</p>
                     </a>
                 </div>
                 <div class="col-lg-6">
