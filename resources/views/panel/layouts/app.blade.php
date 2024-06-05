@@ -83,9 +83,26 @@
                 <div class="d-flex m-3 me-0">
                     <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-dark"></i></button>
 
-                    <a href="#" class="my-auto m-1 btn btn-dark">
-                        <i class="fas fa-user fa-2x "></i>
+
+                    <div class="dropdown ">
+                    <a href="#" class="my-auto m-1 btn btn-dark dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user fa-2x ">
+
+                        </i>
                     </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-info" href="{{ route('profile.show') }}">Profil</a></li>
+
+                            <form method="POST" action="{{ route('logout') }}" >
+                                @csrf
+                                <button class="btn btn-info text-black"> Çıkış Yap</button>
+
+                            </form>
+
+                        </ul>
+                    </div>
+
+
                 </div>
             </div>
         </nav>
