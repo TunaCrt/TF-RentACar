@@ -31,9 +31,9 @@
                         <div class="col-md-12 col-lg-6 col-xl-7">
                             <label class="form-label my-2">Marka İsmi<sup>*</sup></label>
                             <select name="brand_id" id="brand_id" class="form-control">
-                                @foreach($brands as $brand)
-                                    <option value="{{$brand->id}}" @if($brands->count()==1) selected @endif>{{$brand->name}}</option>
-                                @endforeach
+
+                                    <option value="{{$brand->id}}"  selected >{{$brand->name}}</option>
+
                             </select>
                             <div class="form-item">
                                 <label class="form-label my-2">Model İsmi<sup>*</sup></label>
@@ -45,5 +45,39 @@
                 </div>
             </div>
         </form>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">İsim</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                @php
+
+                $number = 1;
+
+                @endphp
+                @foreach($models as $model)
+
+                    <tr>
+                        <td>
+                            <p class="mb-0 mt-4">{{$number++}}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{$model->name}}</p>
+                        </td>
+                    </tr>
+
+
+                @endforeach
+
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection

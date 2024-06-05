@@ -9,16 +9,14 @@ use Illuminate\Http\Request;
 class ModelController extends Controller
 {
 
-    public function create($id =0)
+    public function create($id)
     {
-        if ($id==0){
-            $brands = CarBrand::get();
-        }else{
-            $brands = CarBrand::where('id',$id)->get();
-        }
 
+            $brand = CarBrand::find($id);
 
-        return view('panel.admin.models.create',compact('brands'));
+            $models = CarModel::where('brand_id',$id)->get();
+
+        return view('panel.admin.models.create',compact('brand','models'));
     }
 
     public function store(Request $request)
