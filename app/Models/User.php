@@ -63,4 +63,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function isSeller()
+    {
+        if ($this->role == 2){
+         return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function isAdmin()
+    {
+        if ($this->role == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

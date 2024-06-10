@@ -100,7 +100,7 @@
                                 @endforeach
                                 <div class="col-12">
                                     <div class="rounded pagination d-flex justify-content-center mt-5">
-                                        {{ $cars->links()}}
+                                        <!--carslinks-->
                                     </div>
                                 </div>
                             </div>

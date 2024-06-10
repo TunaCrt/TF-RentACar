@@ -40,25 +40,28 @@ Route::middleware([
     })->name('dashboard');
 
     //admin start
-    Route::prefix('/admin')->name('admin.')->group(function (){
-        Route::prefix('/brand')->name('brand.')->group(function (){
+    Route::middleware('isAdmin')->group(function (){
+        Route::prefix('/admin')->name('admin.')->group(function (){
+            Route::prefix('/brand')->name('brand.')->group(function (){
 
-            Route::get('/create',[BrandController::class,'create'])->name('create');
-            Route::get('/index',[BrandController::class,'index'])->name('index');
-            Route::post('/store',[BrandController::class,'store'])->name('store');
+                Route::get('/create',[BrandController::class,'create'])->name('create');
+                Route::get('/index',[BrandController::class,'index'])->name('index');
+                Route::post('/store',[BrandController::class,'store'])->name('store');
 
-        });
-        Route::prefix('/model')->name('model.')->group(function (){
-            Route::get('/create/{id}',[ModelController::class,'create'])->name('create');
-            Route::post('/store',[ModelController::class,'store'])->name('store');
-        });
-        Route::prefix('/cars')->name('cars.')->group(function (){
-            Route::get('/index/{id?}',[CarController::class,'indexForAdmin'])->name('index');
-            Route::get('/create',[CarController::class,'createForAdmin'])->name('create');
-            Route::get('/show/{id}',[CarController::class,'showForAdmin'])->name('show');
-            Route::post('/store',[CarController::class,'store'])->name('store');
+            });
+            Route::prefix('/model')->name('model.')->group(function (){
+                Route::get('/create/{id}',[ModelController::class,'create'])->name('create');
+                Route::post('/store',[ModelController::class,'store'])->name('store');
+            });
+            Route::prefix('/cars')->name('cars.')->group(function (){
+                Route::get('/index/{id?}',[CarController::class,'indexForAdmin'])->name('index');
+                Route::get('/create',[CarController::class,'createForAdmin'])->name('create');
+                Route::get('/show/{id}',[CarController::class,'showForAdmin'])->name('show');
+                Route::post('/store',[CarController::class,'store'])->name('store');
+            });
         });
     });
+
     //admin end
 
     //seller start

@@ -80,11 +80,9 @@ return [
         'login' => function(){
             $user = \Illuminate\Support\Facades\Auth::user();
             if($user->isSeller()){
-                return '';
+                return route('seller.cars.index');
             }elseif($user->isAdmin()){
-                return route('admin.dashboard');
-            }elseif($user->isSuperAdmin()){
-                abort(403);
+                return route('admin.cars.index');
             }
         },
 
