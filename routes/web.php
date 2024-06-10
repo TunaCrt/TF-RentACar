@@ -13,14 +13,6 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('panel.layouts.app');
 });
-Route::prefix('/cars')->name('cars.')->group(function (){
-    Route::get('/index/{id?}',[CarController::class,'index'])->name('index');
-    Route::get('/create',[CarController::class,'create'])->name('create');
-    Route::get('/show/{id}',[CarController::class,'show'])->name('show');
-    Route::post('/store',[CarController::class,'store'])->name('store');
-
-});
-
 
 
 
@@ -60,14 +52,25 @@ Route::middleware([
             Route::get('/create/{id}',[ModelController::class,'create'])->name('create');
             Route::post('/store',[ModelController::class,'store'])->name('store');
         });
+        Route::prefix('/cars')->name('cars.')->group(function (){
+            Route::get('/index/{id?}',[CarController::class,'indexForAdmin'])->name('index');
+            Route::get('/create',[CarController::class,'createForAdmin'])->name('create');
+            Route::get('/show/{id}',[CarController::class,'showForAdmin'])->name('show');
+            Route::post('/store',[CarController::class,'store'])->name('store');
+        });
     });
     //admin end
 
-    Route::prefix('/cars')->name('cars.')->group(function (){
-        Route::get('/create',[CarController::class,'create'])->name('create');
-        Route::get('/show/{id}',[CarController::class,'show'])->name('show');
-        Route::post('/store',[CarController::class,'store'])->name('store');
+    //seller start
+    Route::prefix('/seller')->name('seller.')->group(function (){
 
+        Route::prefix('/cars')->name('cars.')->group(function (){
+            Route::get('/index/{id?}',[CarController::class,'indexForSeller'])->name('index');
+            Route::get('/create',[CarController::class,'createForSeller'])->name('create');
+            Route::get('/show/{id}',[CarController::class,'showForSeller'])->name('show');
+            Route::post('/store',[CarController::class,'store'])->name('store');
+        });
     });
+    //seller end
 
 });

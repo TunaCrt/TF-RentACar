@@ -1,4 +1,4 @@
-@extends('panel.layouts.app')
+@extends('panel.admin.layouts.app')
 
 
 
@@ -21,7 +21,7 @@
 
     <div class="container py-5">
         <h1 class="mb-4">Araba Bilgileri</h1>
-        <form action="{{route('admin.model.store')}}" method="post" >
+        <form action="{{route('admin.model.store')}}" method="post">
             @csrf
 
             <div class="row g-5">
@@ -32,14 +32,16 @@
                             <label class="form-label my-2">Marka İsmi<sup>*</sup></label>
                             <select name="brand_id" id="brand_id" class="form-control">
 
-                                    <option value="{{$brand->id}}"  selected >{{$brand->name}}</option>
+                                <option value="{{$brand->id}}" selected>{{$brand->name}}</option>
 
                             </select>
                             <div class="form-item">
                                 <label class="form-label my-2">Model İsmi<sup>*</sup></label>
                                 <input name="name" type="text" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn border-secondary py-3 mt-3 px-4 text-uppercase  text-primary">Oluştur</button>
+                            <button type="submit"
+                                    class="btn border-secondary py-3 mt-3 px-4 text-uppercase  text-primary">Oluştur
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -59,7 +61,7 @@
 
                 @php
 
-                $number = 1;
+                    $number = 1;
 
                 @endphp
                 @foreach($models as $model)
@@ -72,7 +74,6 @@
                             <p class="mb-0 mt-4">{{$model->name}}</p>
                         </td>
                     </tr>
-
 
                 @endforeach
 

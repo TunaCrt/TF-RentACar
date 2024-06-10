@@ -1,4 +1,4 @@
-@extends('panel.layouts.app')
+@extends('panel.seller.layouts.app')
 
 @section('content')
 
@@ -10,15 +10,18 @@
                     <div class="row g-4">
                         <div class="col-xl-3">
                             <div class="input-group w-100 mx-auto d-flex">
-                                <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                                <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                                <input type="search" class="form-control p-3" placeholder="keywords"
+                                       aria-describedby="search-icon-1">
+                                <span id="search-icon-1" class="input-group-text p-3"><i
+                                            class="fa fa-search"></i></span>
                             </div>
                         </div>
                         <div class="col-6"></div>
                         <div class="col-xl-3">
                             <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
                                 <label for="fruits">Default Sorting:</label>
-                                <select id="fruits" name="fruitlist" class="border-0 form-select-sm bg-light me-3" form="fruitform">
+                                <select id="fruits" name="fruitlist" class="border-0 form-select-sm bg-light me-3"
+                                        form="fruitform">
                                     <option value="volvo">Nothing</option>
                                     <option value="saab">Popularity</option>
                                     <option value="opel">Organic</option>
@@ -37,7 +40,8 @@
                                             @foreach($brands as $brand)
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="{{route('cars.index', $brand->id)}}"><i class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
+                                                        <a href="{{route('seller.cars.index', $brand->id)}}"><i
+                                                                    class="fas fa-car-alt me-2"></i>{{$brand->name}}</a>
                                                         <span>({{$brand->getCountCars()}})</span>
                                                     </div>
                                                 </li>
@@ -49,8 +53,11 @@
                                 <div class="col-lg-12">
                                     <div class="mb-3">
                                         <h4 class="mb-2">Price</h4>
-                                        <input type="range" class="form-range w-100" id="rangeInput" name="rangeInput" min="0" max="1000000" value="0" oninput="amount.value=rangeInput.value">
-                                        <output id="amount" name="amount" min-velue="0" max-value="500" for="rangeInput">0</output>
+                                        <input type="range" class="form-range w-100" id="rangeInput" name="rangeInput"
+                                               min="0" max="1000000" value="0" oninput="amount.value=rangeInput.value">
+                                        <output id="amount" name="amount" min-velue="0" max-value="500"
+                                                for="rangeInput">0
+                                        </output>
                                     </div>
                                 </div>
                             </div>
@@ -61,9 +68,12 @@
                             <div class="row g-4 justify-content-center">
                                 @foreach($cars as $car)
                                     <div class="col-12">
-                                        <div class="border border-danger rounded-bottom rounded position-relative fruite-item" style="display: flex; align-items: center;">
+                                        <div class="border border-danger rounded-bottom rounded position-relative fruite-item"
+                                             style="display: flex; align-items: center;">
                                             <div class="fruite-img" style="flex: 1;">
-                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}" class="img-fluid rounded" style="max-width: 96%; height: auto; object-fit: cover;">
+                                                <img src="{{asset('panel/img/' . $car->media->first()->media)}}"
+                                                     class="img-fluid rounded"
+                                                     style="max-width: 96%; height: auto; object-fit: cover;">
                                             </div>
 
                                             <div class="" style="flex: 2;">
@@ -73,10 +83,16 @@
                                                 </div>
 
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p style="padding: 0px 20px 20px 10px;" class="" >{{$car->model->name}}</p>
-                                                    <p class="pt-5 text-dark fs-5 fw-bold mb-0">Fiyat: {{$car->formatFiyat()}}</p>
-                                                    <p class="pt-5 text-dark fs-5 fw-bold mb-0">Şehir: {{$car->getCity()}}</p>
-                                                    <a href="{{route('cars.show',$car->id)}}" class="m-4 btn border border-danger rounded-pill px-3 text-danger"><i class="fa fa-shopping-bag me-2 text-danger"></i> İlani Görüntüle</a>
+                                                    <p style="padding: 0px 20px 20px 10px;"
+                                                       class="">{{$car->model->name}}</p>
+                                                    <p class="pt-5 text-dark fs-5 fw-bold mb-0">
+                                                        Fiyat: {{$car->formatFiyat()}}</p>
+                                                    <p class="pt-5 text-dark fs-5 fw-bold mb-0">
+                                                        Şehir: {{$car->getCity()}}</p>
+                                                    <a href="{{route('seller.cars.show',$car->id)}}"
+                                                       class="m-4 btn border border-danger rounded-pill px-3 text-danger"><i
+                                                                class="fa fa-shopping-bag me-2 text-danger"></i> İlani
+                                                        Görüntüle</a>
                                                 </div>
                                             </div>
                                         </div>

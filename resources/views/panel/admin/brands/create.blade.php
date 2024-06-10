@@ -1,4 +1,4 @@
-@extends('panel.layouts.app')
+@extends('panel.admin.layouts.app')
 
 
 
@@ -17,16 +17,18 @@
                         <div class="col-md-12 col-lg-6 col-xl-7">
                             <div class="form-group">
                                 <label for="photos">Araba Fotoğrafları</label>
-                                <input type="file" name="photo" class="form-control mt-1" id="photos"  required>
+                                <input type="file" name="photo" class="form-control mt-1" id="photos" required>
                             </div>
-                        <div class="form-item">
-                            <label class="form-label my-2">Marka İsmi<sup>*</sup></label>
-                            <input name="name" type="text" class="form-control" required>
+                            <div class="form-item">
+                                <label class="form-label my-2">Marka İsmi<sup>*</sup></label>
+                                <input name="name" type="text" class="form-control" required>
+                            </div>
+                            <button type="submit"
+                                    class="btn border-secondary py-3 mt-3 px-4 text-uppercase  text-primary">Kaydet
+                            </button>
                         </div>
-                        <button type="submit" class="btn border-secondary py-3 mt-3 px-4 text-uppercase  text-primary">Kaydet</button>
                     </div>
                 </div>
-            </div>
             </div>
         </form>
     </div>

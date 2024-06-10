@@ -73,8 +73,22 @@ return [
     |
     */
 
-    'home' => '/cars/index',
+    'home' => 'seller/cars/index',
 
+    'redirects' => [
+        'logout' => 'login',
+        'login' => function(){
+            $user = \Illuminate\Support\Facades\Auth::user();
+            if($user->isSeller()){
+                return '';
+            }elseif($user->isAdmin()){
+                return route('admin.dashboard');
+            }elseif($user->isSuperAdmin()){
+                abort(403);
+            }
+        },
+
+    ],
     /*
     |--------------------------------------------------------------------------
     | Fortify Routes Prefix / Subdomain

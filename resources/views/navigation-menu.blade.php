@@ -100,7 +100,7 @@
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
-                                <x-dropdown-link href="{{ route('cars.index') }}">
+                                <x-dropdown-link href="{{ route('admin.cars.index') }}">
                                     {{ __('Anasayfa') }}
                                 </x-dropdown-link>
                             </x-dropdown-link>

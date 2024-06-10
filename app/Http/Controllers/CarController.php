@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class CarController extends Controller
 {
 
-    public function index($id = 0)
+    public function indexForAdmin($id = 0)
     {
         if ($id==0){
             $cars = Car::where('status',1)->latest()->paginate(5);
@@ -25,15 +25,38 @@ class CarController extends Controller
         $brands = CarBrand::get();
 
 
-        return view('panel.cars.index',compact('cars','brands'));
+        return view('panel.admin.cars.index',compact('cars','brands'));
     }
 
-    public function create()
+    public function indexForSeller($id = 0)
+    {
+        if ($id==0){
+            $cars = Car::where('status',1)->latest()->paginate(5);
+        }else{
+            $brand = CarBrand::find($id);
+            $cars = $brand->cars->where('status',1);
+        }
+
+        $brands = CarBrand::get();
+
+
+        return view('panel.seller.cars.index',compact('cars','brands'));
+    }
+
+    public function createForAdmin()
     {
         $cities = City::get();
         $cars = Car::where('status',1)->latest()->take(8)->get();
         $brands = CarBrand::get();
-        return view('panel.cars.create',compact('cities','cars','brands'));
+        return view('panel.admin.cars.create',compact('cities','cars','brands'));
+    }
+
+    public function createForSeller()
+    {
+        $cities = City::get();
+        $cars = Car::where('status',1)->latest()->take(8)->get();
+        $brands = CarBrand::get();
+        return view('panel.seller.cars.create',compact('cities','cars','brands'));
     }
 
     public function store(Request $request)
@@ -103,17 +126,30 @@ class CarController extends Controller
             }
         }
 
-        return redirect()->route('cars.create')->with('success','Araba Oluşturuldu');
+        return redirect()->route('admin.cars.create')->with('success','Araba Oluşturuldu');
     }
 
 
-    public function show($id)
+    public function showForAdmin($id)
     {
         $car = Car::find($id);
         $cars = Car::where('status',1)->latest()->take(8)->get();
 
         if ($car->status == 1){
-            return view('panel.cars.show',compact('car','cars'));
+            return view('panel.admin.cars.show',compact('car','cars'));
+
+        }
+
+        return redirect()->back();
+    }
+
+    public function showForSeller($id)
+    {
+        $car = Car::find($id);
+        $cars = Car::where('status',1)->latest()->take(8)->get();
+
+        if ($car->status == 1){
+            return view('panel.seller.cars.show',compact('car','cars'));
 
         }
 

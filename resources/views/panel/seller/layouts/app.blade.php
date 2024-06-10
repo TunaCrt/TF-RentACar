@@ -27,9 +27,9 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('panel/css/style.css')}}" rel="stylesheet">
-   <style>
-   @yield('css')
-   </style>
+    <style>
+        @yield('css')
+    </style>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -66,22 +66,21 @@
             </button>
             <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="{{route('cars.index')}}" class="nav-item nav-link {{ request()->routeIs('cars.index') ? 'active' : '' }}">Ana Sayfa</a>
-                    <a href="{{route('cars.create')}}" class="nav-item nav-link {{ request()->routeIs('cars.create') ? 'active' : '' }}">İlan Ver</a>
-                    <a href="{{route('admin.brand.index')}}" class="nav-item nav-link {{ request()->routeIs('admin.brand.index') ? 'active' : '' }}">Markalar</a>
+                    <a href="{{route('seller.cars.index')}}" class="nav-item nav-link {{ request()->routeIs('cars.index') ? 'active' : '' }}">Ana Sayfa</a>
+                    <a href="{{route('seller.cars.create')}}" class="nav-item nav-link {{ request()->routeIs('cars.create') ? 'active' : '' }}">İlan Ver</a>
+                    <a href="#" class="nav-item nav-link {{ request()->routeIs('admin.brand.index') ? 'active' : '' }}">Arabalarım</a>
 
-                    <a href="" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-flex m-3 me-0">
                     <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-dark"></i></button>
 
 
                     <div class="dropdown">
-                    <a href="#" class="btn my-auto dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user fa-2x ">
+                        <a href="#" class="btn my-auto dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user fa-2x ">
 
-                        </i>
-                    </a>
+                            </i>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item text-dark btn" href="{{ route('profile.show') }}">Profil</a>
@@ -135,7 +134,7 @@
         @elseif(route('admin.brand.index'))
             Markalar
         @endif
-        </h1>
+    </h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
         <li class="breadcrumb-item"><a href="#">Pages</a></li>
@@ -144,9 +143,9 @@
 </div>
 
 
-    <div class="container">
-        @yield('content')
-       </div>
+<div class="container">
+    @yield('content')
+</div>
 
 
 
