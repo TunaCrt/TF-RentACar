@@ -9,6 +9,7 @@ use App\Models\City;
 use App\Models\MediaGallery;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CarController extends Controller
 {
@@ -154,6 +155,31 @@ class CarController extends Controller
         }
 
         return redirect()->back();
+    }
+
+
+    public function destroyForAdmin($id)
+    {
+        $car = Car::findOrFail($id);
+
+        $carMedias = $car->media;
+
+        foreach ($carMedias as $media) {
+            $filePath = public_path('panel/img/' . $media->media);
+
+            // Dosya mevcutsa sil
+            if (File::exists($filePath)) {
+                File::delete($filePath);
+            }
+
+            // Medya kaydını veritabanından sil
+            $media->delete();
+        }
+
+        $car->delete();
+
+        return redirect()->route('admin.cars.index')->with('success','Araba Başarıyla Silindi');
+
     }
 
 

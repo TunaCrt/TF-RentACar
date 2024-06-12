@@ -57,6 +57,7 @@ Route::middleware([
                 Route::get('/index/{id?}',[CarController::class,'indexForAdmin'])->name('index');
                 Route::get('/create',[CarController::class,'createForAdmin'])->name('create');
                 Route::get('/show/{id}',[CarController::class,'showForAdmin'])->name('show');
+                Route::get('/destroy/{id}',[CarController::class,'destroyForAdmin'])->name('destroy');
                 Route::post('/store',[CarController::class,'store'])->name('store');
             });
         });
