@@ -2,6 +2,12 @@
 
 @section('content')
 
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>
+    @endif
+
     <div class="container-fluid fruite py-5">
         <div class="container py-5">
             <h1 class="mb-4">TF-RentACar</h1>

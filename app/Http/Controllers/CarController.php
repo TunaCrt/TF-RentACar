@@ -127,7 +127,7 @@ class CarController extends Controller
             }
         }
 
-        return redirect()->route('admin.cars.create')->with('success','Araba Oluşturuldu');
+        return redirect()->back()->with('success','Araba Oluşturuldu');
     }
 
 
@@ -179,6 +179,30 @@ class CarController extends Controller
         $car->delete();
 
         return redirect()->route('admin.cars.index')->with('success','Araba Başarıyla Silindi');
+
+    }
+
+    public function destroyForSeller($id)
+    {
+        $car = Car::findOrFail($id);
+
+        $carMedias = $car->media;
+
+        foreach ($carMedias as $media) {
+            $filePath = public_path('panel/img/' . $media->media);
+
+            // Dosya mevcutsa sil
+            if (File::exists($filePath)) {
+                File::delete($filePath);
+            }
+
+            // Medya kaydını veritabanından sil
+            $media->delete();
+        }
+
+        $car->delete();
+
+        return redirect()->route('seller.cars.index')->with('success','Araba Başarıyla Silindi');
 
     }
 

@@ -72,6 +72,7 @@ Route::middleware([
             Route::get('/index/{id?}',[CarController::class,'indexForSeller'])->name('index');
             Route::get('/create',[CarController::class,'createForSeller'])->name('create');
             Route::get('/show/{id}',[CarController::class,'showForSeller'])->name('show');
+            Route::get('/destroy/{id}',[CarController::class,'destroyForSeller'])->name('destroy');
             Route::post('/store',[CarController::class,'store'])->name('store');
         });
     });
